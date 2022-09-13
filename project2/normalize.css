@@ -1,0 +1,48 @@
+/* body in css is the selector, text-align is the property, center is the value */
+#wolves {
+  border-radius: 30px;
+  height: 25%;
+  width: 25%;
+}
+
+header {
+  text-align: center;
+  background: url("trees.jpg");
+  background-size: cover;
+  color: white;
+}
+a {
+  color: white;
+} /* We can set the link's color here */
+ul {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* allows us to add transparency */
+  width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 50px;
+}
+li {
+  display: inline;
+  padding: 0px 5px 0px 5px;
+}
+img {
+  border: 7px solid grey;
+  border-radius: 20px;
+}
+article {
+  max-width: 500px; /* max-width means our article elements can be smaller than 500 px, but not any larger. */
+  padding: 20px;
+  margin: 0 auto; /* When we set to "0 auto", it has 0 margin on top and bottom and auto on left and right. */
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 36px;
+  }
+  li {
+    display: block;
+    padding: 5px;
+  }
+}
