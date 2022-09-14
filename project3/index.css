@@ -1,3 +1,37 @@
 body {
   font-family: helvetica, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
+  background-color: rgb(54, 54, 54);
+}
+div {
+  height: 200px;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+p {
+  padding: 10px;
+  text-align: justify;
+  line-height: 28px;
+  position: absolute; /* breaks the regular flow of the paragraph */
+  bottom: 0; /* puts the paragraph zero pixels from the botton*/
+  margin: 0;
+}
+.first {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("discs.jpeg");
+  background-size: cover;
+}
+.second {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("bags.jpg");
+  background-size: cover;
+}
+.third {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("socialMedia.png");
+  background-size: cover;
+  height: 300px;
 }
