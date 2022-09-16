@@ -19,7 +19,7 @@ ul {
   background: rgba(0, 0, 0, 0.5); /* allows us to add transparency */
   width: 500px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 0 auto; /* Make the content sit in the middle */
 }
 h1 {
   font-size: 50px;

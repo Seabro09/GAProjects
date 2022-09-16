@@ -13,11 +13,26 @@ div {
 }
 p {
   padding: 10px;
-  text-align: justify;
+  text-align: left;
   line-height: 28px;
   position: absolute; /* breaks the regular flow of the paragraph */
   bottom: 0; /* puts the paragraph zero pixels from the botton*/
   margin: 0;
+  background-color: black;
+  height: 50px;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  background: -webkit-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.4)
+  );
+  background: -moz-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.4)
+  );
 }
 .first {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -34,4 +49,44 @@ p {
     url("socialMedia.png");
   background-size: cover;
   height: 300px;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+h1 {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 50px;
+  text-align: center;
+  color: #aaaaaa;
+}
+
+#header2 {
+  color: #bbbbbb;
+  text-align: center;
+  margin-top: -10px; /* The space between the main header and header two is made smaller */
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  /* h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  } */
+  /* div {
+    margin: 20px 12px 0 12px;
+  } */
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }

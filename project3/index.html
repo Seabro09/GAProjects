@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discobolus</title>
+    <title>Disc Store!</title>
     <link href="index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Discobolus</h1>
+    <h1>Store of Discs!</h1>
+    <h2 id="header2">Yah Can't Beat These Discs!</h2>
     <div class="first">
       <h2>Discs!</h2>
       <p>
         Our store has one of the widest selection of disc golf and ultimate
-        brands. Come to Discobolus for all of your flying disc needs!
+        brands. Come to the Store of Discs for all of your flying disc needs!
       </p>
     </div>
     <div class="second">
@@ -30,5 +38,10 @@
         giveaways, and so much more!
       </p>
     </div>
+    <script>
+      $("div").on("click", function () {
+        $(this).toggleClass("show-description");
+      });
+    </script>
   </body>
 </html>
