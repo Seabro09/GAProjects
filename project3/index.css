@@ -1,3 +1,5 @@
+
+
 body {
   font-family: helvetica, sans-serif;
   max-width: 600px;
@@ -12,6 +14,7 @@ div {
   border-radius: 12px;
 }
 p {
+  cursor: pointer;
   padding: 10px;
   text-align: left;
   line-height: 28px;
@@ -48,15 +51,18 @@ p {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("socialMedia.png");
   background-size: cover;
-  height: 300px;
+  height: 325px;
 }
 
 .show-description p {
   height: 150px;
 }
 
-.show-description small {
+.show-description #hidden {
   opacity: 1;
+}
+.show-description #click {
+  opacity: 0;
 }
 
 h1 {
@@ -71,7 +77,13 @@ h1 {
   text-align: center;
   margin-top: -10px; /* The space between the main header and header two is made smaller */
 }
-
+#click {
+  text-align: justify;
+  font-size: larger;
+}
+#hidden {
+  opacity: 0;
+}
 @media (max-width: 500px) {
   h1 {
     font-size: 50px;
