@@ -8,7 +8,6 @@ body {
   background-color: rgb(54, 54, 54);
 }
 div {
-  height: 200px;
   position: relative;
   margin: 40px 0 0 0;
   border-radius: 12px;
@@ -41,11 +40,13 @@ p {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("discs.jpeg");
   background-size: cover;
+  height: 200px;
 }
 .second {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("bags.jpg");
   background-size: cover;
+    height: 200px;
 }
 .third {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -70,6 +71,7 @@ h1 {
   font-size: 50px;
   text-align: center;
   color: #aaaaaa;
+  padding-top: 40px;
 }
 
 #header2 {
