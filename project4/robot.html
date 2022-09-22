@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <script src="jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -8,8 +8,6 @@
     rel="stylesheet"
   />
   <style>
-    div {
-    }
     .beep {
       width: 5px;
       height: 0px;
@@ -33,6 +31,20 @@
       50% {
         background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
       }
+    }
+    .flash {
+      background-color: #f44336; /* Red */
+      color: white;
+      border-color: white;
+      border-radius: 20px;
+      padding: 5px;
+    }
+    .color {
+      background-color: #296ceb; /* Red */
+      color: white;
+      border-color: white;
+      border-radius: 20px;
+      padding: 5px;
     }
     .laser {
       animation: blink 0.5s infinite;
@@ -116,4 +128,29 @@
     <div class="foot"></div>
   </div>
   <button class="flash">Laser Eyes On/Off</button>
+  <button class="color">Change Color!</button>
+  <script>
+    $(".flash").on("click", function () {
+      // on click of the button with class flash, toggle the class laser onto be added to the brain class
+      $(".brain").toggleClass("laser");
+    }); // jQuery: When I do this, make CSS do this.. or, Find something, do something.
+    // when the button with class color is clicked, run the functionality below
+
+    function changeColor() {
+      let x = Math.floor(Math.random() * 256); // declare a variable x in local memory and set its value equal to a random number between 0 and 255 and floor it so that it is to the nearest whole number
+      let y = Math.floor(Math.random() * 256);
+      let z = Math.floor(Math.random() * 256);
+      let randomRGBA = "rgba(" + x + "," + y + "," + z + ", 1)";
+      $("body").css("background", randomRGBA);
+    }
+
+    $(".color").on("click"), setInterval(changeColor, 300);
+    // $(".color").on("click", function () {
+    //   setInterval(function () {
+    //     // every 5 seconds...
+    //
+    //     $("body").css("background", randomRGBA); // for the body element type, set the background selector equal to whatever value is in randomRGBA
+    //   }, 500);
+    // });
+  </script>
 </body>
