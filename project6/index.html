@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 
 <head>
-  <script src="/assets/jquery.js"></script>
-  <style></style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      font-family: "Fjalla One";
+      font-size: 20px;
+      background: #e6eaf0;
+    }
+    button {
+      /* decreased margin and added padding for styling. */
+      margin: 20px;
+      padding: 5px 10px 5px 10px;
+      /* Added some rounded corners for styling */
+      border-radius: 20px;
+      /* more styling for background, font color, and borders */
+      background-color: rgb(25, 134, 206);
+      color: white;
+      border-color: white;
+    }
+    input {
+      font-size: 24px;
+      /* Added some rounded corners for styling */
+      border-radius: 25px;
+    }
+    .fill {
+      background: white;
+      color: red;
+      border-bottom: 2px black solid;
+      font-family: "Shadows Into Light";
+      padding: 0 6px;
+      margin: 4px;
+    }
+  </style>
 </head>
 
 <body>
   <div class="prompt"></div>
+  <button>Next</button>
   <script>
-    var prompts = ["Type your name", "Type an adjective", "Type a noun"];
-    // for the div of class "prompt", take whatever is inside the array of prompts at postion zero and place it inside that div
-    $(".prompt").html(prompts[0]);
+    // List of prompts for the user
+    let prompts = ["Type your name", "Type an adjective", "Type a noun"];
+
+    // array for our answers
+    let answers = [];
+    // Keep track of current prompt we're on
+    let currentPrompt = 0;
+
+    // A function that will call the next prompt
+    let nextPrompt = function () {
+      // if currentPrompt is not equal to 0
+      if (currentPrompt != 0) {
+        // push whatever the user input into the input element into the answers array
+        answers.push($("input").val());
+      }
+      // if currentPrompt is less than the length of the prompts array...
+      if (currentPrompt < prompts.length) {
+        // for the div with prompt class, place the value of the zero index into that div as html text and also display an input box.
+        $(".prompt").html(prompts[currentPrompt] + '<br><input type="text">');
+        // move the next prompt into variable currentPrompt
+        currentPrompt++;
+      } else {
+        // if currentPrompt is greater than or equal to prompts.length... call the function showFinal()
+        showFinal();
+      }
+    };
+
+    let showFinal = function () {
+      // within the div of class prompt, insert the html below and style the specific parts with class .fill
+      $(".prompt").html(
+        'This is the story of <span class="fill">' +
+          answers[0] +
+          '</span> and the <span class="fill">' +
+          answers[1] +
+          '</span> <span class="fill">' +
+          answers[2] +
+          "</span>."
+      );
+      // then hide the "Next" button
+      $("button").hide();
+    };
+
+    $("button").click(function () {
+      // on click, call the function nextPrompt()
+      nextPrompt();
+    });
+    // here we go ahead and call the function nextPrompt() when the page is loaded so that we have our initial user prompt displayed.
+    nextPrompt();
   </script>
 </body>
