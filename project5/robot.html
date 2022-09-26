@@ -135,15 +135,23 @@
       $(".brain").toggleClass("laser");
     }); // jQuery: When I do this, make CSS do this.. or, Find something, do something.
     // when the button with class color is clicked, run the functionality below
+    $(".color").click(function () {
+      // when the button with class color is clicked, run the functionality below
 
-    function changeColor() {
-      let x = Math.floor(Math.random() * 256); // declare a variable x in local memory and set its value equal to a random number between 0 and 255 and floor it so that it is to the nearest whole number
-      let y = Math.floor(Math.random() * 256);
-      let z = Math.floor(Math.random() * 256);
-      let randomRGBA = "rgba(" + x + "," + y + "," + z + ", 1)";
-      $("body").css("background", randomRGBA);
-    }
+      var red = Math.floor(Math.random() * 255); // declare a variable red in local memory and set its value equal to a random number between 0 and 255 and floor it so that it is to the nearest whole number
+      var green = Math.floor(Math.random() * 255); // same as above
+      var blue = Math.floor(Math.random() * 255); // sane as above
+      var randomRGBA = "rgba(" + red + "," + green + "," + blue + ", 1)"; // declare a variable randomRGBA and set equal to an rgba of random red, green, blue and opacity 1)
+      $("body").css("background", randomRGBA); // for the body element type, set the background selector equal to whatever value is in randomRGBA
+    });
+    // function changeColor() {
+    //   let x = Math.floor(Math.random() * 256); // declare a variable x in local memory and set its value equal to a random number between 0 and 255 and floor it so that it is to the nearest whole number
+    //   let y = Math.floor(Math.random() * 256);
+    //   let z = Math.floor(Math.random() * 256);
+    //   let randomRGBA = "rgba(" + x + "," + y + "," + z + ", 1)";
+    //   $("body").css("background", randomRGBA);
+    // }
 
-    $(".color").on("click"), setInterval(changeColor, 300);
+    // $(".color").on("click"), setInterval(changeColor, 300);
   </script>
 </body>
