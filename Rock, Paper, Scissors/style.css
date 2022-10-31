@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  flex-direction: column;
+  background-color: aquamarine;
+  font-family: sans-serif;
+}
+
+button {
+  border-radius: 10px;
+  color: rgb(37, 123, 221);
+  background-color: bisque;
+}
+
+input {
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#log {
+  font-size: 20px;
+}
