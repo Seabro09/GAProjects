@@ -7,7 +7,8 @@ let playersChoice = null;
 let computer = {};
 let computersChoice = null;
 
-const form = document.querySelector(".pchoice");
+const form = document.getElementById("form");
+const input = document.querySelector(".pchoice");
 const log = document.getElementById("log");
 
 // Create an array for the game options
@@ -26,7 +27,7 @@ computerChooses();
 
 function compareChoices() {
   if (player.playersChoice === computer.computersChoice) {
-    return "There was a tie";
+    return `There was a tie.  Both players chose ${player.playersChoice}.`;
   } else if (
     computer.computersChoice === choices[0] &&
     player.playersChoice === choices[1]
@@ -48,7 +49,9 @@ function compareChoices() {
 }
 
 function logSubmit(event) {
-  console.log("This is working");
+  player.playersChoice = input.value;
+  log.textContent = compareChoices();
+  event.preventDefault();
 }
 
 form.addEventListener("submit", logSubmit);
