@@ -55,3 +55,5 @@ function logSubmit(event) {
 }
 
 form.addEventListener("submit", logSubmit);
+
+console.log("This is working");
