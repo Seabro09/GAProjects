@@ -49,11 +49,17 @@ function compareChoices() {
 }
 
 function logSubmit(event) {
+  // make the playersChoice key of player object equal to what the user put in
   player.playersChoice = input.value;
+  // make the html text content of the log element whatever is returned out of compareChoices() function
   log.textContent = compareChoices();
+  // prevent the page from refreshing on submit and losing text in the log element
   event.preventDefault();
 }
 
+function resetPage() {
+  location.reload();
+}
+// event listener on the form itself. on submit, fun the logSubmit function
 form.addEventListener("submit", logSubmit);
-
-console.log("This is working");
+form.addEventListener("reset", resetPage);
