@@ -10,7 +10,7 @@ body {
 }
 
 .div1 {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   /* flex: 1; */
   /*   margin: 10px;
@@ -24,28 +24,36 @@ body {
 #form {
   display: flex;
   flex-direction: column;
+  min-height: 100px;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  margin: 5px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
 }
 
 button {
   border-radius: 10px;
   color: rgb(255, 255, 255);
-  background-color: #008cba;
+  background-color: #467f92;
   height: 30px;
   width: 100px;
   margin: 5px;
+  transform: scale(0.98);
 }
 
 input {
   border-radius: 10px;
-  padding: 5px;
+  /* padding: 5px; */
   /*   margin: 10px; */
+  transform: scale(0.98);
 }
 
 #log {
   font-size: 20px;
   padding: 0px 20px 0px 20px;
+}
+
+.shade {
+  box-shadow: 2px 4px;
+  transform: scale(1);
 }
